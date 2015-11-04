@@ -2,7 +2,14 @@
     <string name="app_name">AEC Trips</string>
 
     <string name="thai">ไทย</string>
-    <string name="laos">ลาว</string>
-    <string name="malay">มาเลเซีย</string>
+    <string name="lao">ลาว</string>
+    <string name="vietnam">เวียดนาม</string>
+    <string name="myanmar">พม่า</string>
+    <string name="philippines">ฟิลิปปินส์</string>
+    <string name="cambodia">กัมพูชา</string>
+    <string name="singapore">สิงคโปร์</string>
+    <string name="indonesia">อินโดนีเซีย</string>
+    <string name="brunei">บรูไน</string>
+    <string name="malaysia">มาเลเซีย</string>
 
 </resources>
