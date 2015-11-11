@@ -30,7 +30,8 @@
                     android:layout_width="@dimen/icon2"
                     android:layout_height="@dimen/icon2"
                     android:id="@+id/imageView11"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/icon_cow" />
 
                 <TextView
                     android:layout_width="wrap_content"
