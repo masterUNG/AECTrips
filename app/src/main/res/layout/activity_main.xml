@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/wall">
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,14 +31,14 @@
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView"
-                android:src="@drawable/icon_thai48_1"
+                android:src="@drawable/thailand48"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView2"
-                android:src="@drawable/icon_laos48"
+                android:src="@drawable/laos48"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -76,14 +77,14 @@
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView3"
-                android:src="@drawable/icon_vietnam48"
+                android:src="@drawable/vietnam48"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView4"
-                android:src="@drawable/icon_singapore48"
+                android:src="@drawable/singapore48"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -122,14 +123,14 @@
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView5"
-                android:src="@drawable/icon_philippines48"
+                android:src="@drawable/philippines48"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView6"
-                android:src="@drawable/icon_myanmar48_1"
+                android:src="@drawable/myanmar48"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -169,13 +170,13 @@
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView7"
                 android:layout_weight="1"
-                android:src="@drawable/icon_indonesia48" />
+                android:src="@drawable/indonesia48" />
 
             <ImageView
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView8"
-                android:src="@drawable/icon_cambodia48"
+                android:src="@drawable/cambodia48"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -214,14 +215,14 @@
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView9"
-                android:src="@drawable/icon_brunei48"
+                android:src="@drawable/brunei48"
                 android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView10"
-                android:src="@drawable/icon_malaysiar48"
+                android:src="@drawable/malaysia48"
                 android:layout_weight="1" />
         </LinearLayout>
 

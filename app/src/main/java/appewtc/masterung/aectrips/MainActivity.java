@@ -227,12 +227,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         titleStrings[8] = getString(R.string.brunei);
         titleStrings[9] = getString(R.string.malaysia);
 
-        String[] detailStrings = new String[10];
+        String[] detailStrings = getResources().getStringArray(R.array.detail_shot_country);
+
 
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
         objBuilder.setIcon(iconInts[intChoose]);
         objBuilder.setTitle(titleStrings[intChoose]);
-        objBuilder.setMessage("Test");
+
+        objBuilder.setMessage(detailStrings[intChoose]);
+
         objBuilder.setCancelable(false);
         objBuilder.setPositiveButton("การสื่อสาร", new DialogInterface.OnClickListener() {
             @Override
