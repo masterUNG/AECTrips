@@ -14,5 +14,6 @@
 
     <string name="traval">การเดินทาง</string>
     <string name="community">การสือสาร</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

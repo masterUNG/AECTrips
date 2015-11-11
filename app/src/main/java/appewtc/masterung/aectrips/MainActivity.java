@@ -2,6 +2,7 @@ package appewtc.masterung.aectrips;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -246,6 +247,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         objBuilder.setNegativeButton("การเดินทาง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+
                 dialogInterface.dismiss();
             }
         });
