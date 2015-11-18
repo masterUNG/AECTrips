@@ -8,7 +8,7 @@ public class TravelActivity extends AppCompatActivity {
 
     //Explicit
     private ListView communityListView;
-    private int indexAnInt;
+    private int indexAnInt, forExtraAnInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +42,51 @@ public class TravelActivity extends AppCompatActivity {
         CommunityTABLE objCommunityTABLE = new CommunityTABLE(this);
 
         String[] thaiStrings = objCommunityTABLE.readAllData(1);
-        String[] wordStrings = objCommunityTABLE.readAllData(indexAnInt + 1);
+
+        String[] wordStrings = objCommunityTABLE.readAllData(forExtra(indexAnInt));
 
         MyAdapter objMyAdapter = new MyAdapter(TravelActivity.this, iconInts[indexAnInt], thaiStrings, wordStrings);
         communityListView.setAdapter(objMyAdapter);
 
+    }
+
+    private int forExtra(int indexAnInt) {
+
+        int intExtra = 0;
+        switch (indexAnInt) {
+            case 0:
+                intExtra = 1;
+                break;
+            case 1:
+                intExtra = 3;
+                break;
+            case 2:
+                intExtra = 5;
+                break;
+            case 3:
+                intExtra = 7;
+                break;
+            case 4:
+                intExtra = 9;
+                break;
+            case 5:
+                intExtra = 11;
+                break;
+            case 6:
+                intExtra = 13;
+                break;
+            case 7:
+                intExtra = 15;
+                break;
+            case 8:
+                intExtra = 17;
+                break;
+            case 9:
+                intExtra = 19;
+                break;
+        }
+
+        return intExtra;
     }
 
 }   // Main Class
