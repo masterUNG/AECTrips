@@ -29,7 +29,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         getCenterLatLng();
 
         //Move To Center
-       // moveToCenter();
+        // moveToCenter();
 
 
     }   // onCreate
@@ -49,7 +49,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 16));
+        //Assign Center Map
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 6));
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(latCenterADouble, lngCenterADouble);
