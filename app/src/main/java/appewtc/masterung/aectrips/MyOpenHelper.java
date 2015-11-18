@@ -21,6 +21,29 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "Lng text, " +
             "Picture text);";
 
+    private static final String CREATE_COMMUNITY_TABLE = "create table communityTABLE (" +
+            "_id integer primary key, " +
+            "THword text, " +
+            "THsound text, " +
+            "LAword text, " +
+            "LAsound text, " +
+            "VNword text, " +
+            "VNsound text, " +
+            "SGword text, " +
+            "SGsound text, " +
+            "PHword text, " +
+            "PHsound text, " +
+            "MMword text, " +
+            "MMsound text, " +
+            "IDword text, " +
+            "IDsound text, " +
+            "CBword text, " +
+            "CBsound text, " +
+            "BNword text, " +
+            "BNsound text, " +
+            "MYword text, " +
+            "MYsound text);";
+
 
     public MyOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -29,6 +52,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_COUNTRY_TABLE);
+        sqLiteDatabase.execSQL(CREATE_COMMUNITY_TABLE);
     }
 
     @Override
