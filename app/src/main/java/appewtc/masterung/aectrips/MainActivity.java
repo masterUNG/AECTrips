@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView thaiImageView, laoImageView, vietnamImageView, singaporeImageView,
             phillipinImageView, myanmaImageView, indodisiaImageView, kumpodiaImageView, blueniImageView,
             mayasiaImageView;
+    private CommunityTABLE objCommunityTABLE;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Create & Connected Database
         objCountryTABLE = new CountryTABLE(this);
+        objCommunityTABLE = new CommunityTABLE(this);
 
         //Tester Add Value
         //testerAddValue();
@@ -156,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void testerAddValue() {
         objCountryTABLE.addNewValue("testCountry", "testName", "testDescription", "testLat", "testLng", "testPicture");
+        objCommunityTABLE.addCommunity("test1", "test2", "test3", "test4", "test5",
+                "test6", "test7", "test8", "test9", "test10", "test11", "test12", "test13",
+                "test14", "test15", "test16", "test17", "test18", "test19", "test20");
+
     }
 
     @Override
