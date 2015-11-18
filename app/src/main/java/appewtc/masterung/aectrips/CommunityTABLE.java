@@ -2,6 +2,7 @@ package appewtc.masterung.aectrips;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -14,6 +15,7 @@ public class CommunityTABLE {
     private SQLiteDatabase writeSqLiteDatabase, readSqLiteDatabase;
 
     public static final String COMMUNITY_TABLE = "communityTABLE";
+    public static final String COLUMN_ID_COMMUNITY = "_id";
     public static final String COLUMN_THWORD = "THword";
     public static final String COLUMN_THSOUND = "THsound";
     public static final String COLUMN_LAWORD = "LAword";
@@ -42,6 +44,100 @@ public class CommunityTABLE {
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
 
     }   // Constructor
+
+    // Read All Data
+    public String[] readAllData(int intColunm) {
+
+        String[] strResult = null;
+
+        Cursor objCursor = readSqLiteDatabase.query(COMMUNITY_TABLE,
+                new String[]{COLUMN_ID_COMMUNITY, COLUMN_THWORD, COLUMN_THSOUND,
+                        COLUMN_LAWORD, COLUMN_LASOUND, COLUMN_VNWORD, COLUMN_VNSOUND,
+                        COLUMN_SGWORD, COLUMN_SGSOUND, COLUMN_PHWORD, COLUMN_PHSOUND,
+                        COLUMN_MMWORD, COLUMN_MMSOUND, COLUMN_IDWORD, COLUMN_IDSOUND,
+                        COLUMN_CBWORD, COLUMN_CBSOUND, COLUMN_BNWORD, COLUMN_BNSOUND,
+                        COLUMN_MYWORD, COLUMN_MYSOUND},
+                null, null, null, null, null);
+
+        if (objCursor != null) {
+
+            strResult = new String[objCursor.getCount()];
+            objCursor.moveToFirst();
+
+            for (int i = 0; i < objCursor.getCount(); i++) {
+
+                switch (intColunm) {
+                    case 1:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_THWORD));
+                        break;
+                    case 2:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_THSOUND));
+                        break;
+                    case 3:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_LAWORD));
+                        break;
+                    case 4:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_LASOUND));
+                        break;
+                    case 5:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_VNWORD));
+                        break;
+                    case 6:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_VNSOUND));
+                        break;
+                    case 7:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_SGWORD));
+                        break;
+                    case 8:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_SGSOUND));
+                        break;
+                    case 9:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PHWORD));
+                        break;
+                    case 10:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PHSOUND));
+                        break;
+                    case 11:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_MMWORD));
+                        break;
+                    case 12:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_MMSOUND));
+                        break;
+                    case 13:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_IDWORD));
+                        break;
+                    case 14:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_IDSOUND));
+                        break;
+                    case 15:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_CBWORD));
+                        break;
+                    case 16:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_CBSOUND));
+                        break;
+                    case 17:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_BNWORD));
+                        break;
+                    case 18:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_BNSOUND));
+                        break;
+                    case 19:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_MYWORD));
+                        break;
+                    case 20:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_MYSOUND));
+                        break;
+                }   // switch
+
+                objCursor.moveToNext();
+            }   // for
+
+        }   // if
+
+
+        return strResult;
+    }
+
 
     public long addCommunity(String thWord, String thSound,
                              String laWord, String laSound,
