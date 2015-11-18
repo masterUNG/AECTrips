@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String[] detailStrings = getResources().getStringArray(R.array.detail_shot_country);
 
         final Double[] douLat = {13.751665, 17.972833, 21.024240, 1.287100, 14.589029, 17.336745, -7.607853, 11.564300, 4.889848, 3.153240};
-        final Double[] douLng = {100.492595, 102.618592, 105.857866, 103.854521, 120.974914, 96.497252, -7.924750, 104.931005, 114.939256, 101.703767};
+        final Double[] douLng = {100.492595, 102.618592, 105.857866, 103.854521, 120.974914, 96.497252, 110.203741, 104.931005, 114.939256, 101.703767};
 
 
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
@@ -300,10 +300,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         objBuilder.setMessage(detailStrings[intChoose]);
 
-        objBuilder.setCancelable(false);
+        objBuilder.setCancelable(true);
         objBuilder.setPositiveButton("การสื่อสาร", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+                //Intent to TravelActivity
+                Intent objIntent = new Intent(MainActivity.this, TravelActivity.class);
+                objIntent.putExtra("index", intChoose);
+                startActivity(objIntent);
                 dialogInterface.dismiss();
             }
         });
@@ -315,7 +320,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 objIntent.putExtra("Lat", douLat[intChoose]);
                 objIntent.putExtra("Lng", douLng[intChoose]);
                 startActivity(objIntent);
-
                 dialogInterface.dismiss();
             }
         });
