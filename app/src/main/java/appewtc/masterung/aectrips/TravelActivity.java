@@ -25,6 +25,7 @@ public class TravelActivity extends AppCompatActivity {
 
     private void createListView() {
 
+        //Receive Index for Choose Country
         indexAnInt = getIntent().getIntExtra("index", 0);
 
         int[] iconInts = new int[10];
