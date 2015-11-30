@@ -97,6 +97,7 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundPhilipin(soundString);
                 break;
             case 5:
+                intResult = soundMayna(soundString);
                 break;
             case 6:
                 break;
@@ -110,6 +111,31 @@ public class TravelActivity extends AppCompatActivity {
 
         return intResult;
     }   // soundEffect
+
+    private int soundMayna(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("mm1")) {
+            intResult = R.raw.mm1;
+        } else if (soundString.equals("mm2")) {
+            intResult = R.raw.mm2;
+        } else if (soundString.equals("mm3")) {
+            intResult = R.raw.mm3;
+        } else if (soundString.equals("mm4")) {
+            intResult = R.raw.mm4;
+        } else if (soundString.equals("mm5")) {
+            intResult = R.raw.mm5;
+        } else if (soundString.equals("mm6")) {
+            intResult = R.raw.mm6;
+        } else if (soundString.equals("mm9")) {
+            intResult = R.raw.mm9;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+
+        return intResult;
+    }
 
     private int soundPhilipin(String soundString) {
         int intResult = R.raw.no1;
