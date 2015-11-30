@@ -1,5 +1,6 @@
 package appewtc.masterung.aectrips;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ public class TravelActivity extends AppCompatActivity {
 
     //Explicit
     private ListView communityListView;
-    private int indexAnInt, forExtraAnInt;
+    private int indexAnInt, forExtraAnInt, indexSoundAnInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,20 +59,33 @@ public class TravelActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                soundEffect(indexAnInt, soundStrings[i]);
+                indexSoundAnInt = soundEffect(indexAnInt, soundStrings[i]);
 
-            }   // event
+                MediaPlayer soundPlayer = MediaPlayer.create(getBaseContext(), indexSoundAnInt);
+                soundPlayer.start();
+
+                soundPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                    }
+                });
+
+            }   // even
         });
 
     }   //Create ListView
 
-    private void soundEffect(int indexAnInt, String soundString) {
+    private int soundEffect(int indexAnInt, String soundString) {
+
+        int intResult = R.raw.no1;
 
         switch (indexAnInt) {
             case 0:
-
+                intResult = soundThai(soundString);
                 break;
             case 1:
+                intResult = soundLaos(soundString);
                 break;
             case 2:
                 break;
@@ -91,7 +105,63 @@ public class TravelActivity extends AppCompatActivity {
                 break;
         }   //switch
 
+        return intResult;
     }   // soundEffect
+
+    private int soundLaos(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("la2")) {
+            intResult = R.raw.la2;
+        } else if (soundString.equals("la3")) {
+            intResult = R.raw.la3;
+        } else if (soundString.equals("la4")) {
+            intResult = R.raw.la4;
+        } else if (soundString.equals("la5")) {
+            intResult = R.raw.la5;
+        } else if (soundString.equals("la6")) {
+            intResult = R.raw.la6;
+        } else if (soundString.equals("la8")) {
+            intResult = R.raw.la8;
+        } else if (soundString.equals("la9")) {
+            intResult = R.raw.la9;
+        } else if (soundString.equals("la10")) {
+            intResult = R.raw.no1;
+        } else if (soundString.equals("la11")) {
+            intResult = R.raw.no1;
+        } else if (soundString.equals("la12")) {
+            intResult = R.raw.no1;
+        } else if (soundString.equals("la7")) {
+            intResult = R.raw.no1;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+
+        return intResult;
+    }
+
+    private int soundThai(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("th1")) {
+            intResult = R.raw.th1;
+        } else if (soundString.equals("th2")) {
+            intResult = R.raw.th2;
+        } else if (soundString.equals("th3")) {
+            intResult = R.raw.th3;
+        } else if (soundString.equals("th4")) {
+            intResult = R.raw.th4;
+        } else if (soundString.equals("th6")) {
+            intResult = R.raw.th6;
+        } else if (soundString.equals("th12")) {
+            intResult = R.raw.no1;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
 
     private int forSound(int indexAnInt) {
 
