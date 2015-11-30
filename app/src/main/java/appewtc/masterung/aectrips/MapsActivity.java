@@ -21,6 +21,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private CountryTABLE objCountryTABLE;
     private LatLng[] markerLatLngs;
     private int[] iconCountryInts;
+    private String[] titleStrings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String[] strLat = objCountryTABLE.readAllCountry(4);
         String[] strLng = objCountryTABLE.readAllCountry(5);
         String[] strCountry = objCountryTABLE.readAllCountry(1);
+        titleStrings = objCountryTABLE.readAllCountry(2);
 
         iconCountryInts = new int[strCountry.length];
         for (int i=0;i<strCountry.length;i++) {
@@ -117,7 +119,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (int i=0;i<markerLatLngs.length;i++) {
 
             mMap.addMarker(new MarkerOptions().position(markerLatLngs[i]).
-            icon(BitmapDescriptorFactory.fromResource(iconCountryInts[i])));
+            icon(BitmapDescriptorFactory.fromResource(iconCountryInts[i])).
+            title(titleStrings[i]));
 
         }   // for
 
