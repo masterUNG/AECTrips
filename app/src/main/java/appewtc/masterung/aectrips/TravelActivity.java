@@ -100,6 +100,7 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundMayna(soundString);
                 break;
             case 6:
+                intResult = soundIndonisia(soundString);
                 break;
             case 7:
                 break;
@@ -111,6 +112,20 @@ public class TravelActivity extends AppCompatActivity {
 
         return intResult;
     }   // soundEffect
+
+    private int soundIndonisia(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("id1")) {
+            intResult = R.raw.id1;
+        } else if (soundString.equals("id8")) {
+            intResult = R.raw.id8;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
 
     private int soundMayna(String soundString) {
         int intResult = R.raw.no1;
