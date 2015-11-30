@@ -15,6 +15,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private Double latCenterADouble, lngCenterADouble;
     private LatLng centerLatLng;
+    private int countryAnInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

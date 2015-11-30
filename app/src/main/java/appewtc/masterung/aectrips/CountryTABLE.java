@@ -2,6 +2,7 @@ package appewtc.masterung.aectrips;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -31,6 +32,54 @@ public class CountryTABLE {
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
 
     }   // Constructor
+
+    //Read All Data
+    public String[] readAllCountry(int intColumn) {
+
+        String[] strResult = null;
+        Cursor objCursor = readSqLiteDatabase.query(COUNTRY_TABLE,
+                new String[]{COLUMN_ID,
+                        COLUMN_COUNTRY,
+                        COLUMN_NAME,
+                        COLUMN_DESCRIPTION,
+                        COLUMN_LAT,
+                        COLUMN_LNG,
+                        COLUMN_PICTURE},
+                null, null, null, null, null);
+
+        if (objCursor != null) {
+            strResult = new String[objCursor.getCount()];
+            objCursor.moveToFirst();
+            for (int i = 0; i < objCursor.getCount(); i++) {
+
+                switch (intColumn) {
+                    case 1:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_COUNTRY));
+                        break;
+                    case 2:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_NAME));
+                        break;
+                    case 3:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_DESCRIPTION));
+                        break;
+                    case 4:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_LAT));
+                        break;
+                    case 5:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_LNG));
+                        break;
+                    case 6:
+                        strResult[i] = objCursor.getString(objCursor.getColumnIndex(COLUMN_PICTURE));
+                        break;
+
+                }   //switch
+                objCursor.moveToNext();
+            } // for
+        }   //if
+        objCursor.close();
+        return strResult;
+    }
+
 
     //Add New Value to countryTABLE
     public long addNewValue(String strCountry, String strName, String strDescription, String strLat, String strLng, String strPicture) {
