@@ -59,7 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 iconCountryInts[i] = R.drawable.th;
             } else if (strCountry[i].equals("ลาว")) {
                 iconCountryInts[i] = R.drawable.la;
-            }else if (strCountry.equals("เวียดนาม")) {
+            }else if (strCountry[i].equals("เวียดนาม")) {
                 iconCountryInts[i] = R.drawable.vn;
             }else if (strCountry[i].equals("สิงคโปร์")) {
                 iconCountryInts[i] = R.drawable.sg;
