@@ -2,6 +2,8 @@ package appewtc.masterung.aectrips;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class TravelActivity extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class TravelActivity extends AppCompatActivity {
         //Receive Index for Choose Country
         indexAnInt = getIntent().getIntExtra("index", 0);
 
+        //Icon on ListView
         int[] iconInts = new int[10];
         iconInts[0] = R.drawable.thailand48;
         iconInts[1] = R.drawable.laos48;
@@ -46,9 +49,87 @@ public class TravelActivity extends AppCompatActivity {
 
         String[] wordStrings = objCommunityTABLE.readAllData(forExtra(indexAnInt));
 
+        final String[] soundStrings = objCommunityTABLE.readAllData(forSound(indexAnInt));
+
         MyAdapter objMyAdapter = new MyAdapter(TravelActivity.this, iconInts[indexAnInt], thaiStrings, wordStrings);
         communityListView.setAdapter(objMyAdapter);
 
+        communityListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                soundEffect(indexAnInt, soundStrings[i]);
+
+            }   // event
+        });
+
+    }   //Create ListView
+
+    private void soundEffect(int indexAnInt, String soundString) {
+
+        switch (indexAnInt) {
+            case 0:
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+        }   //switch
+
+    }   // soundEffect
+
+    private int forSound(int indexAnInt) {
+
+        int intSound = 0;
+        switch (indexAnInt) {
+            case 0:
+                intSound = 2;
+                break;
+            case 1:
+                intSound = 4;
+                break;
+            case 2:
+                intSound = 6;
+                break;
+            case 3:
+                intSound = 8;
+                break;
+            case 4:
+                intSound = 10;
+                break;
+            case 5:
+                intSound = 12;
+                break;
+            case 6:
+                intSound = 14;
+                break;
+            case 7:
+                intSound = 16;
+                break;
+            case 8:
+                intSound = 18;
+                break;
+            case 9:
+                intSound = 20;
+                break;
+        }   // switch
+
+        return intSound;
     }
 
     private int forExtra(int indexAnInt) {
