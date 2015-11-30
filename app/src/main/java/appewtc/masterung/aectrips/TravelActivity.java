@@ -106,6 +106,7 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundCombodia(soundString);
                 break;
             case 8:
+                intResult = soundBunei(soundString);
                 break;
             case 9:
                 break;
@@ -113,6 +114,35 @@ public class TravelActivity extends AppCompatActivity {
 
         return intResult;
     }   // soundEffect
+
+    private int soundBunei(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("bn1")) {
+            intResult = R.raw.bn1;
+        } else if (soundString.equals("bn2")) {
+            intResult = R.raw.bn2;
+        } else if (soundString.equals("bn3")) {
+            intResult = R.raw.bn3;
+        } else if (soundString.equals("bn4")) {
+            intResult = R.raw.bn4;
+        } else if (soundString.equals("bn5")) {
+            intResult = R.raw.bn5;
+        } else if (soundString.equals("bn6")) {
+            intResult = R.raw.bn6;
+        } else if (soundString.equals("bn7")) {
+            intResult = R.raw.bn7;
+        } else if (soundString.equals("bn8")) {
+            intResult = R.raw.bn8;
+        } else if (soundString.equals("bn9")) {
+            intResult = R.raw.bn9;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+
+        return intResult;
+    }
 
     private int soundCombodia(String soundString) {
         int intResult = R.raw.no1;
