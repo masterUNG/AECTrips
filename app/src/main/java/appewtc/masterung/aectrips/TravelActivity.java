@@ -109,16 +109,46 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundBunei(soundString);
                 break;
             case 9:
+                intResult = soundMalay(soundString);
                 break;
         }   //switch
 
         return intResult;
     }   // soundEffect
 
+    private int soundMalay(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("my1")) {
+            intResult = R.raw.my1;
+        } else if (soundString.equals("my2")) {
+            intResult = R.raw.my2;
+        } else if (soundString.equals("my3")) {
+            intResult = R.raw.my3;
+        } else if (soundString.equals("my4")) {
+            intResult = R.raw.my4;
+        } else if (soundString.equals("my5")) {
+            intResult = R.raw.my5;
+        } else if (soundString.equals("my6")) {
+            intResult = R.raw.my6;
+        } else if (soundString.equals("my7")) {
+            intResult = R.raw.my7;
+        } else if (soundString.equals("my8")) {
+            intResult = R.raw.my8;
+        } else if (soundString.equals("my9")) {
+            intResult = R.raw.my9;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+
+        return intResult;
+    }
+
     private int soundBunei(String soundString) {
         int intResult = R.raw.no1;
 
-        if (soundString.equals("bn1")) {
+        if (soundString.equals("bu1")) {
             intResult = R.raw.bn1;
         } else if (soundString.equals("bn2")) {
             intResult = R.raw.bn2;
