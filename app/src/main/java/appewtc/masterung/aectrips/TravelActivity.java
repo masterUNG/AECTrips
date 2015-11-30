@@ -94,6 +94,7 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundSingapo(soundString);
                 break;
             case 4:
+                intResult = soundPhilipin(soundString);
                 break;
             case 5:
                 break;
@@ -109,6 +110,30 @@ public class TravelActivity extends AppCompatActivity {
 
         return intResult;
     }   // soundEffect
+
+    private int soundPhilipin(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("ph1")) {
+            intResult = R.raw.ph1;
+        } else if (soundString.equals("ph2")) {
+            intResult = R.raw.ph2;
+        } else if (soundString.equals("ph3")) {
+            intResult = R.raw.ph3;
+        } else if (soundString.equals("ph4")) {
+            intResult = R.raw.ph4;
+        } else if (soundString.equals("ph6")) {
+            intResult = R.raw.ph6;
+        } else if (soundString.equals("ph9")) {
+            intResult = R.raw.ph9;
+        } else if (soundString.equals("ph12")) {
+            intResult = R.raw.no1;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
 
     private int soundSingapo(String soundString) {
         int intResult = R.raw.no1;
