@@ -22,5 +22,11 @@
             android:layout_gravity="center_horizontal"
             android:textSize="@dimen/h2"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/image"
+            android:layout_height="@dimen/image"
+            android:id="@+id/imageView12"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>

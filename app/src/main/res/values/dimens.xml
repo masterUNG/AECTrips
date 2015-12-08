@@ -9,6 +9,7 @@
     <dimen name="magin">25dp</dimen>
     <dimen name="icon2">100dp</dimen>
     <dimen name="icon_list">48dp</dimen>
+    <dimen name="image">250dp</dimen>
 
 
 </resources>
