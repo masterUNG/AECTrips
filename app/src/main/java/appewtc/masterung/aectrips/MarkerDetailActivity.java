@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class MarkerDetailActivity extends AppCompatActivity {
 
     //Explicit
@@ -56,10 +58,16 @@ public class MarkerDetailActivity extends AppCompatActivity {
     private void showView() {
 
         //Show Title
-
         titleTextView.setText(titleString);
 
-    }
+        //Show Image
+        Picasso.with(MarkerDetailActivity.this)
+                .load(pictureString)
+                .resize(250, 250)
+                .into(markerImageView);
+
+
+    }   // showView
 
     private void bindWidget() {
         titleTextView = (TextView) findViewById(R.id.textView14);
