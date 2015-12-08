@@ -38,7 +38,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //Create LatLng for Marker
         createLatLngForMarker();
 
-
     }   // onCreate
 
     private void createLatLngForMarker() {
