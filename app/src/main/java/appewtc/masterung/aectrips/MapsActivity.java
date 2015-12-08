@@ -131,6 +131,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public boolean onMarkerClick(Marker marker) {
 
                 Intent objIntent = new Intent(MapsActivity.this, MarkerDetailActivity.class);
+                String strTitle = marker.getTitle();
+                objIntent.putExtra("Title", strTitle);
                 startActivity(objIntent);
 
 
