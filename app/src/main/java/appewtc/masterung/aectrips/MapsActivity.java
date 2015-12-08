@@ -1,5 +1,6 @@
 package appewtc.masterung.aectrips;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -10,6 +11,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -123,10 +125,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         }   // for
 
-        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(latCenterADouble, lngCenterADouble);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //Long Click on Marker
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                Intent objIntent = new Intent(MapsActivity.this, MarkerDetailActivity.class);
+                startActivity(objIntent);
+
+
+                return true;
+            }
+        });
+
 
     }   // onMapReady
 
