@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="appewtc.masterung.aectrips.MarkerDetailActivity">
+    tools:context="appewtc.masterung.aectrips.MarkerDetailActivity"
+    android:background="@drawable/wall">
 
     <LinearLayout
         android:orientation="vertical"
@@ -27,6 +28,22 @@
             android:layout_width="@dimen/image"
             android:layout_height="@dimen/image"
             android:id="@+id/imageView12"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+
+        <ScrollView
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:id="@+id/scrollView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textView15"
+                android:textSize="20sp" />
+        </ScrollView>
     </LinearLayout>
 </RelativeLayout>
